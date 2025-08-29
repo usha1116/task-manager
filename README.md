@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # TaskFlow - MERN Stack Task Manager
 
 A modern, full-stack task management application built with the MERN stack (MongoDB, Express.js, React, Node.js) featuring authentication, role-based permissions, and a beautiful responsive UI.
