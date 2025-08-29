@@ -46,9 +46,16 @@ console.log('⚠️  Rate limiting disabled for development');
 // CORS configuration
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? process.env.CLIENT_URL 
-    : 'http://localhost:3000',
+    ? [
+        process.env.CLIENT_URL,
+        'https://*.vercel.app',
+        'https://*.onrender.com',
+        'https://*.railway.app'
+      ].filter(Boolean)
+    : ['http://localhost:3000'],
   credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
 }));
 
 // Body parsing middleware
