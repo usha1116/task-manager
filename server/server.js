@@ -118,8 +118,15 @@ const startServer = async () => {
   });
 };
 
+// if (require.main === module) {
+//   startServer();
+// }
+
+// module.exports = app;
+
 if (require.main === module) {
-  startServer();
+  startServer(); // only runs locally, not on Vercel
 }
 
-module.exports = app;
+module.exports = { app, connectDB };
+
