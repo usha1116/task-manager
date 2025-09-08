@@ -45,12 +45,10 @@ console.log('⚠️  Rate limiting disabled for development');
 
 // CORS configuration
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production' 
+  origin: process.env.NODE_ENV === 'production'
     ? [
         process.env.CLIENT_URL,
-        'https://*.vercel.app',
-        'https://*.onrender.com',
-        'https://*.railway.app'
+        'https://task-manager-gamma-rosy.vercel.app'
       ].filter(Boolean)
     : ['http://localhost:3000'],
   credentials: true,
